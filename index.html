@@ -65,9 +65,16 @@
  
         /* RIGHT SIDE: Proportionate Cards */
         .cards-panel {
-            flex: 0 0 28vw; display: flex; flex-direction: column;
-            align-items: flex-end; gap: 4vh;
-            
+            flex: 0 0 28vw; 
+            display: flex; 
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4vh;
+            justify-content: center;      /* Center vertically */
+            padding: 5vh 0;               /* Space from top and bottom */
+            height: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
         }
  
         .card {
