@@ -22,7 +22,7 @@
         body, html {
             margin: 0; padding: 0; height: 100vh; width: 100vw;
             font-family: 'Inter', sans-serif;
-            background: url('bg.jpg') no-repeat center center fixed; 
+            background: url('https://uploads.onecompiler.io/44bt7hg65/44d9knr68/back.jpg') no-repeat center center fixed; 
             background-size: cover; 
             overflow: hidden;
             display: flex; align-items: center;
@@ -82,7 +82,7 @@
         .card {
             background: var(--card-bg); 
             backdrop-filter: blur(20px);
-            width: 50vh; height: 50vh; 
+            width: 45vh; height: 45vh; 
             padding: 3vh 2vw;
             border-radius: 3.5vh; 
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -135,7 +135,7 @@
                 <div class="metrics-grid">
                     <div class="metric-block">
                         <span class="m-label">PM 2.5</span>
-                        <span class="m-val"><span id="in-pm25">--</span>></span>
+                        <span class="m-val"><span id="in-pm25">--</span></span>
                     </div>
                     <div class="v-divider"></div>
                     <div class="metric-block">
@@ -210,8 +210,8 @@
                     
                     const aqi = calcAQI(avg25);
                     document.getElementById('in-aqi').innerText = aqi;
-                    document.getElementById('in-pm25').innerHTML = Math.round(avg25) + '<span class="metric-unit">µg/m³</span>';
-                    document.getElementById('in-pm10').innerHTML = Math.round(avg10) + '<span class="metric-unit">µg/m³</span>';
+                    document.getElementById('in-pm25').innerHTML = Math.round(avg25) + '<span class="metric-unit"> µg/m³</span>';
+                    document.getElementById('in-pm10').innerHTML = Math.round(avg10) + '<span class="metric-unit"> µg/m³</span>';
                     
                     const st = document.getElementById('status-text');
                     st.innerText = aqi <= 15 ? "PRISTINE" : aqi <= 30 ? "EXCEPTIONAL" : aqi <= 45 ? "EXCELLENT" : aqi <= 60 ? "VERY GOOD" : "GOOD";
@@ -234,8 +234,8 @@
                     
                     const pm25 = gData.pollutants.find(p => p.code === 'pm25');
                     const pm10 = gData.pollutants.find(p => p.code === 'pm10');
-                    if (pm25) document.getElementById('out-pm25').innerHTML = Math.round(pm25.concentration.value) + '<span class="metric-unit">µg/m³</span>';
-                    if (pm10) document.getElementById('out-pm10').innerHTML = Math.round(pm10.concentration.value) + '<span class="metric-unit">µg/m³</span>';
+                    if (pm25) document.getElementById('out-pm25').innerHTML = Math.round(pm25.concentration.value) + '<span class="metric-unit"> µg/m³</span>';
+                    if (pm10) document.getElementById('out-pm10').innerHTML = Math.round(pm10.concentration.value) + '<span class="metric-unit"> µg/m³</span>';
                 }
             } catch (e) { console.error(e); }
         }
